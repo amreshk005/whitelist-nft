@@ -204,7 +204,7 @@ export default function Home() {
       // No need for the Signer here, as we are only reading state from the blockchain
       const provider = await getProviderOrSigner();
       // we connect to the contract using a provider, so we will only have read only access to the contract
-      const nftContractf = new Contract(NFT_CONTRACT_ADDRESS, abit, provider);
+      const nftContract = new Contract(NFT_CONTRACT_ADDRESS, abi, provider);
       // call the tokenIds from the contract
       const _tokenIds = await nftContract.tokenIds();
       //_tokenIds is a `Big Number`. We need to convert the Big Number to a string
